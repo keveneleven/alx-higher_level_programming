@@ -35,11 +35,15 @@ size_t print_listint(const listint_t *h)
 		printf("%d", h->n);
 		n_count++;
 		if (h->next != NULL)
+		{
 			printf(" -> ");
+		}
 		else
+		{
 			printf("\n");
+		}
+		h = h->next;
 	}
-	h = h->next;
 	return (n_count);
 }
 /**
