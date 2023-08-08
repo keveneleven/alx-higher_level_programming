@@ -2,4 +2,4 @@
 str = "Holberton School"
 number = 3
 print(f"{3 * str}")
-print(f"{0:9} Holberton")
+print(str[0:9])
