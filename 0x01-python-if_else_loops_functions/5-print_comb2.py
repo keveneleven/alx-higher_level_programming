@@ -7,4 +7,3 @@ while number < 100:
     else:
         print("{:02}".format(number), end=", ")
     number += 1
-
