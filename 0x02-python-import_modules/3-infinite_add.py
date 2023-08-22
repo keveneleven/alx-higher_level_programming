@@ -3,9 +3,6 @@ if __name__ == "__main__":
     import sys
 
     tot = 0
-    i = 0
-    cnt = len(sys.argv) - 1
-    while i < cnt:
+    for i in range(len(sys.argv) - 1):
         tot += int(sys.argv[i + 1])
-        i += 1
-        print("{}".format(tot))
+    print("{}".format(tot))
