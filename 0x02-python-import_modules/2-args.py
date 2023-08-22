@@ -12,5 +12,5 @@ if __name__ == "__main__":
         
         i = 0
         while i < cnt:
-        print("{}: {}".format(i + 1, sys.argv[i + 1]))
-        i += 1
+            print("{}: {}".format(i + 1, sys.argv[i + 1]))
+            i += 1
