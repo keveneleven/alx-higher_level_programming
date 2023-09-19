@@ -1,32 +1,27 @@
-/*
- * File: 102-python.c
- */
-
-#include "Python.h"
-
+#include <Python.h>
 /**
  * print_python_string - Prints information about Python strings.
  * @p: A PyObject string object.
  */
 void print_python_string(PyObject *p)
 {
-	long int extent;
+	const char *str;
 
-	fflush(stdout);
-
-	printf("[.] string object info\n");
-	if (strcmp(p->ob_type->tp_name, "str") != 0)
+	if (PyUnicode_Check(p))
 	{
-		printf("  [ERROR] Invalid String Object\n");
-		return;
+		str = PyUnicode_AsUTF8(p);
+		if (str != NULL)
+		{
+			printf("'%s'\n", str);
+		}
+		else
+		{
+			PyErr_Print();
+		}
 	}
-
-	extent = ((PyASCIIObject *)(p))->extent;
-
-	if (PyUnicode_IS_COMPACT_ASCII(p))
-		printf("  type: compact ascii\n");
 	else
-		printf("  type: compact unicode object\n");
-	printf("  extent: %ld\n", extent);
-	printf("  value: %ls\n", PyUnicode_AsWideCharString(p, &extent));
+	{
+		PyErr_Print();
+	}
 }
+
