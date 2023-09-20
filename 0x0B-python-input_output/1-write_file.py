@@ -1,14 +1,17 @@
 #!/usr/bin/python3
-"""function that appends a string at the end of a text file"""
+"""Define text file functions"""
+
 
 def write_file(filename="", text=""):
-    """Write a string to a UTF8 text file.
+    """
+    Write a string to file
 
     Args:
-        filename (str): The name of the file to write.
-        text (str): The text to write to the file.
+        filename (str): Name of filename
+        text (str): Text to write
     Returns:
-        The number of characters written.
+        Number of characters written
     """
+    n_lines = 0
     with open(filename, "w", encoding="utf-8") as f:
         return f.write(text)
